@@ -56,22 +56,39 @@ Acessível, encorajador, claro e profissional (Português do Brasil). Evita "eco
 
 ```mermaid
 flowchart TD
-    A[Cliente] -->|Mensagem| B[Interface]
-    B --> C[LLM]
-    C --> D[Base de Conhecimento]
-    D --> C
-    C --> E[Validação]
-    E --> F[Resposta]
+    A["Cliente / Usuário"] -->|Mensagem| B["Interface (CLI / Web)"]
+    B -->|Entrada Bruta| S["Módulo de Cibersegurança (security.py)"]
+    
+    subgraph SecLayer ["Camada de Cibersegurança & DLP"]
+        S -->|Checagem OWASP LLM01| S1{"Tentativa de Injection?"}
+        S1 -->|Sim| SB["Bloqueio Imediato + Registro em security_audit.log"]
+        S1 -->|Não| S2["DLP: Mascaramento de CPF / Cartão / Senhas"]
+    end
+
+    S2 -->|Texto Sanitizado| C["LLM (Google Gemini API / 1.5 Flash)"]
+    
+    subgraph KB ["Base de Conhecimento Estruturada"]
+        K1["AGENTS.md (Diretrizes Mestras)"]
+        K2["agent/persona.md (Identidade e Limites)"]
+        K3["agent/knowledge/*.md (Conhecimento de Domínio)"]
+        K4["skills/**/SKILL.md (Habilidades Passo a Passo)"]
+    end
+
+    KB -->|System Prompt & Contexto| C
+    SB -->|Alerta de Segurança| F["Resposta ao Cliente"]
+    C -->|Resposta Gerada| E["Validação de Guardrails & Anti-Alucinação"]
+    E -->|Resposta Segura e Educativa| F
+    F -->|Exibição| A
 ```
 
 ### Componentes
 
 | Componente | Descrição |
 |------------|-----------|
-| Interface | [ex: Chatbot em Streamlit] |
-| LLM | [ex: GPT-4 via API] |
-| Base de Conhecimento | [ex: JSON/CSV com dados do cliente] |
-| Validação | [ex: Checagem de alucinações] |
+| Interface | Chat interativo no terminal via Python (app.py) com suporte a harnesses de IA |
+| LLM | Google Gemini API (gemini-1.5-flash) com fallback para simulação local |
+| Base de Conhecimento | Arquivos Markdown estruturados (AGENTS.md, orcamento-e-reserva.md, produtos-financeiros.md) |
+| Validação | Módulo de Cibersegurança (security.py) com DLP (LGPD/PCI-DSS), filtro OWASP LLM01 e Guardrails anti-alucinação |
 
 ---
 
