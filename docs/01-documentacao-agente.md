@@ -96,12 +96,22 @@ flowchart TD
 
 ### Estratégias Adotadas
 
-- [ ] [ex: Agente só responde com base nos dados fornecidos]
-- [ ] [ex: Respostas incluem fonte da informação]
-- [ ] [ex: Quando não sabe, admite e redireciona]
-- [ ] [ex: Não faz recomendações de investimento sem perfil do cliente]
+### Estratégias Adotadas
+- [x] Agente só responde com base na base de conhecimento oficial e regras do AGENTS.md
+- [x] Sanitização e mascaramento automático de dados sensíveis (DLP para CPF, Cartão e Senhas)
+- [x] Bloqueio ativo contra tentativas de Prompt Injection e Jailbreak (OWASP LLM01)
+- [x] Proibição estrita de promessas de retorno garantido ou indicações de risco sem reserva prévia
+- [x] Quando não sabe ou foge do escopo financeiro seguro, admite o limite e redireciona
 
 ### Limitações Declaradas
 > O que o agente NÃO faz?
 
-[Liste aqui as limitações explícitas do agente]
+### Limitações Declaradas
+> O que o agente NÃO faz?
+
+- **NÃO solicita, não aceita e não armazena dados confidenciais:** senhas, números de cartão, chaves PIX, códigos 2FA ou dados bancários pessoais.
+- **NÃO realiza transações ou operações financeiras reais:** não faz pagamentos, transferências, resgates ou compras.
+- **NÃO garante retornos fixos em Renda Variável:** não promete rentabilidade garantida em ações, criptomoedas ou fundos imobiliários.
+- **NÃO indica investimentos de risco para quem não possui reserva:** não recomenda ativos voláteis ou ilíquidos antes da formação da reserva de emergência.
+- **NÃO incentiva endividamento ou apostas:** recusa veementemente esquemas de pirâmide, apostas (bets) ou empréstimos por impulso.
+- **NÃO substitui consultoria de investimentos individualizada e regulada:** atua exclusivamente como mentor e educador financeiro.
