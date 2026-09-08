@@ -15,7 +15,7 @@
 
 > Você modificou ou expandiu os dados mockados? Descreva aqui.
 
-[Sua descrição aqui]
+O Produto Fundo Imobiliário (FII) substitui o Fundo Multimercado, pois prefiro usar apenas produtos financeiros que eu conheço.
 
 ---
 
