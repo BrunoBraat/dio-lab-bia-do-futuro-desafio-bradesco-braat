@@ -149,13 +149,24 @@ PRODUTOS DISPONIVEIS PARA ENSINO(data/produtos_financeiros.json):
 > Mostre um exemplo de como os dados são formatados para o agente.
 
 ```
-Dados do Cliente:
+DADOS DO CLIENTE:
 - Nome: João Silva
 - Perfil: Moderado
-- Saldo disponível: R$ 5.000
+- Objetivo: Construir reserva de emergência
+- Reserva atual: R$ 10.000 (meta: R$ 15.000)
 
-Últimas transações:
-- 01/11: Supermercado - R$ 450
-- 03/11: Streaming - R$ 55
-...
+RESUMO DE GASTOS (Outubro/2025):
+- Moradia: R$ 1.380
+- Alimentação: R$ 570
+- Transporte: R$ 295
+- Saúde: R$ 188
+- Lazer: R$ 55,90
+- Total de saídas: R$ 2.488,90
+
+PRODUTOS DISPONÍVEIS PARA EXPLICAR:
+- Tesouro Selic (risco baixo)
+- CDB Liquidez Diária (risco baixo)
+- LCI/LCA (risco baixo)
+- Fundo Imobiliario (risco médio)
+- Fundo de Ações (risco alto)
 ```
