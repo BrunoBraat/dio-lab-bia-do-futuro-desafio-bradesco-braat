@@ -47,6 +47,8 @@ with open('data/produtos_financeiros.json', 'r', encoding='utf-8') as f;
 ### Como os dados são usados no prompt?
 > Os dados vão no system prompt? São consultados dinamicamente?
 
+Para simplificar, vamos "injetar" os dados em nosso prompt. garantindo que o Agente tenha o melhor contexto possivel.
+
 ```text
 DADOS DO CLIENTE E PERFIL (data/perfil_investidor.json):
 {
@@ -87,7 +89,7 @@ data,descricao,categoria,valor,tipo
 2025-10-20,Academia,saude,99.00,saida
 2025-10-25,Combustível,transporte,250.00,saida
 
-HISTORICO DE ATENDIMENTO DO CLIENTE:
+HISTORICO DE ATENDIMENTO DO CLIENTE(data/historico_atendimento.csv):
 data,canal,tema,resumo,resolvido
 2025-09-15,chat,CDB,Cliente perguntou sobre rentabilidade e prazos,sim
 2025-09-22,telefone,Problema no app,Erro ao visualizar extrato foi corrigido,sim
@@ -95,7 +97,7 @@ data,canal,tema,resumo,resolvido
 2025-10-12,chat,Metas financeiras,Cliente acompanhou o progresso da reserva de emergência,sim
 2025-10-25,email,Atualização cadastral,Cliente atualizou e-mail e telefone,sim
 
-PRODUTOS DISPONIVEIS PARA ENSINO: 
+PRODUTOS DISPONIVEIS PARA ENSINO(data/produtos_financeiros.json): 
 [
   {
     "nome": "Tesouro Selic",
