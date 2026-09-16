@@ -1,11 +1,3 @@
----
-
-### 🔧 Como corrigir (Leva 10 segundos):
-
-1. Clique no ícone de **lápis (✏️)** no canto superior direito do arquivo para editar.
-2. **Apague tudo** o que está dentro do arquivo.
-3. Cole o texto abaixo (que já está limpo, **começando direto no `# 💻 Código...`**, sem as crases e sem `---` no início):
-
 ```markdown
 # 💻 Código da Aplicação - Braat Finanças
 
