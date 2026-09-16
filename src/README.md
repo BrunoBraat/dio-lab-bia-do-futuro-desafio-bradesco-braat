@@ -62,5 +62,3 @@ A aplicação abrirá automaticamente no seu navegador no endereço `http://loca
 ```
 
 ---
-
-4. Clique no botão verde **"Commit changes..."** para salvar. O aviso vermelho vai sumir imediatamente e o Markdown ficará perfeito!
