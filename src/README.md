@@ -1,11 +1,15 @@
 ---
 
+### 🔧 Como corrigir (Leva 10 segundos):
+
+1. Clique no ícone de **lápis (✏️)** no canto superior direito do arquivo para editar.
+2. **Apague tudo** o que está dentro do arquivo.
+3. Cole o texto abaixo (que já está limpo, **começando direto no `# 💻 Código...`**, sem as crases e sem `---` no início):
+
 ```markdown
 # 💻 Código da Aplicação - Braat Finanças
 
 Esta pasta contém o código-fonte da aplicação interativa do **Braat Finanças**, desenvolvida em Python e Streamlit com integração à API do **Google Gemini** e suporte a modelos locais via Ollama.
-
----
 
 ## 📁 Estrutura da Pasta `src/`
 
@@ -15,8 +19,6 @@ src/
 ├── requirements.txt     # Lista de dependências e bibliotecas necessárias
 └── README.md            # Guia de execução e documentação técnica da aplicação
 ```
-
----
 
 ## 📦 Dependências (`requirements.txt`)
 
@@ -28,8 +30,6 @@ pandas>=2.0.0
 requests>=2.31.0
 python-dotenv>=1.0.0
 ```
-
----
 
 ## 🚀 Como Rodar a Aplicação
 
@@ -62,8 +62,6 @@ streamlit run src/app.py
 
 A aplicação abrirá automaticamente no seu navegador no endereço `http://localhost:8501`.
 
----
-
 ## 🛡️ Recursos Implementados
 
 - **Context Grounding:** Injeção automática dos dados do cliente (`perfil_investidor.json`, `transacoes.csv` e `produtos_financeiros.json`) no prompt de sistema da IA.
@@ -73,7 +71,4 @@ A aplicação abrirá automaticamente no seu navegador no endereço `http://loca
 
 ---
 
-### 📝 O que fazer no GitHub:
-1. Clique no ícone de lápis **✏️ (Edit this file)** no canto superior direito do arquivo `src/README.md`.
-2. Substitua o texto antigo por esse bloco acima.
-3. No final da página, clique no botão verde **"Commit changes..."** para salvar!
+4. Clique no botão verde **"Commit changes..."** para salvar. O aviso vermelho vai sumir imediatamente e o Markdown ficará perfeito!
